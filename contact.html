@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -112,15 +112,16 @@
     </header>
 
     <main class="contact-main">
-        <h1 class="section-title" data-i18n="contact_title">Contact Us Today</h1>
-        <p class="section-lead" data-i18n="contact_lead">Have questions about GenbaSense? Reach out to our team and let's discuss how we can improve safety on your site.</p>
+        <h1 class="section-title" data-inquiry-title data-i18n="contact_title">Contact Us Today</h1>
+        <p class="section-lead" data-inquiry-lead data-i18n="contact_lead">Have questions about GenbaSense? Reach out to our team and let's discuss how we can improve safety on your site.</p>
 
         <div class="contact-form-wrap">
             <div class="form-success" id="gsFormSuccess" data-i18n="form_success">Thank you! We'll contact you soon.</div>
             <div class="form-error" id="gsFormError" data-i18n="form_error">Something went wrong. Please try again.</div>
-            <form id="gsContactForm" class="contact-form" action="https://script.google.com/macros/s/AKfycbw9GETXoKpXtsfgCeZ3t1dVdd2oxyDqq8ii_hhhhvmgz47NCGc9FWuvtiuirUeaGTui/exec" method="POST" target="gs_hidden_iframe">
+            <form id="gsContactForm" class="contact-form" method="POST" target="gs_hidden_iframe">
                 <input type="hidden" id="gs_timestamp" name="timestamp">
-                <input type="hidden" name="interest" value="GenbaSense Contact">
+                <input type="hidden" id="gs_country" name="country">
+                <input type="hidden" id="gs_interest" name="interest">
                 <div class="form-group">
                     <label for="gs_name"><span data-i18n="form_name">Full Name</span> <span class="required">*</span></label>
                     <input type="text" id="gs_name" name="name" required>
@@ -135,11 +136,11 @@
                 </div>
                 <div class="form-group">
                     <label for="gs_company"><span data-i18n="form_company">Company</span> <span class="required">*</span></label>
-                    <input type="text" id="gs_company" name="company" required>
+                    <input type="text" id="gs_company" required>
                 </div>
                 <div class="form-group">
                     <label for="gs_site_type"><span data-i18n="form_site_type">Type of site</span> <span class="required">*</span></label>
-                    <select id="gs_site_type" name="site_type" required>
+                    <select id="gs_site_type" required>
                         <option value="" data-i18n="form_site_type_ph">Select site type (construction, warehouse, etc.)</option>
                         <option value="Construction" data-i18n="site_type_construction">Construction</option>
                         <option value="Warehouse" data-i18n="site_type_warehouse">Warehouse</option>
@@ -152,7 +153,7 @@
                     <label for="gs_message" data-i18n="form_message">Message</label>
                     <textarea id="gs_message" name="message" data-i18n-placeholder="form_message_ph" placeholder="Tell us about your site and safety needs..."></textarea>
                 </div>
-                <button type="submit" class="submit-btn" data-i18n="form_submit">Send message</button>
+                <button type="submit" class="submit-btn" data-inquiry-submit data-i18n="form_submit">Send message</button>
             </form>
             <iframe name="gs_hidden_iframe" id="gs_hidden_iframe" style="display:none;" title="Form submission"></iframe>
         </div>
@@ -164,34 +165,22 @@
         </div>
     </main>
 
+    <script src="gs-form.js"></script>
     <script src="genbasense-i18n.js"></script>
     <script>
-        (function () {
-            var form = document.getElementById('gsContactForm');
-            if (!form) return;
-            var successEl = document.getElementById('gsFormSuccess');
-            var errorEl = document.getElementById('gsFormError');
-            var submitBtn = form.querySelector('.submit-btn');
-
-            form.addEventListener('submit', function () {
-                document.getElementById('gs_timestamp').value = new Date().toISOString();
-                var lang = window.GS_getLang ? window.GS_getLang() : 'en';
-                var strings = window.GS_I18N && window.GS_I18N[lang];
-                if (submitBtn) {
-                    submitBtn.disabled = true;
-                    submitBtn.textContent = (strings && strings.form_submitting) || 'Submitting...';
-                }
-                setTimeout(function () {
-                    if (successEl) successEl.style.display = 'block';
-                    if (errorEl) errorEl.style.display = 'none';
-                    form.reset();
-                    if (submitBtn) {
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = (strings && strings.form_submit) || 'Send message';
-                    }
-                }, 1000);
-            });
-        })();
+        window.GS_setupSheetForm({
+            formId: 'gsContactForm',
+            iframeName: 'gs_hidden_iframe',
+            successId: 'gsFormSuccess',
+            errorId: 'gsFormError',
+            timestampId: 'gs_timestamp',
+            countryId: 'gs_country',
+            companyId: 'gs_company',
+            interestId: 'gs_interest',
+            siteTypeId: 'gs_site_type',
+            messageId: 'gs_message'
+        });
+        if (window.GS_applyInquiryCopy) window.GS_applyInquiryCopy();
     </script>
 </body>
 </html>

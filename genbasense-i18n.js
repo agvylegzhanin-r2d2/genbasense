@@ -93,6 +93,8 @@
             contact_eyebrow: 'Get in touch',
             contact_title: 'Contact Us Today',
             contact_lead: "Have questions about GenbaSense? Reach out to our team and let's discuss how we can improve safety on your site.",
+            contact_title_demo: 'Book a Demo',
+            contact_lead_demo: 'Schedule a GenbaSense demo with our team. Tell us about your site and we will show you how real-time proximity alerts work in the field.',
             back_link: '← Back to product choice',
             back_to_genba: '← Back to GenbaSense',
             btn_contact_nav: 'Contact',
@@ -110,6 +112,7 @@
             form_message: 'Message',
             form_message_ph: 'Tell us about your site and safety needs...',
             form_submit: 'Send message',
+            form_submit_demo: 'Request demo',
             form_submitting: 'Submitting...',
             form_success: "Thank you! We'll contact you soon.",
             form_error: 'Something went wrong. Please try again.'
@@ -204,6 +207,8 @@
             contact_eyebrow: 'お問い合わせ',
             contact_title: 'お問い合わせ',
             contact_lead: 'GenbaSenseについてご質問がありますか？チームまでご連絡ください。現場の安全向上についてご相談ください。',
+            contact_title_demo: 'デモを予約',
+            contact_lead_demo: 'GenbaSenseのデモをご予約ください。現場の状況をお聞かせいただき、リアルタイム接近警報の仕組みをご紹介します。',
             back_link: '← 製品選択に戻る',
             back_to_genba: '← GenbaSenseに戻る',
             btn_contact_nav: 'お問い合わせ',
@@ -221,6 +226,7 @@
             form_message: 'メッセージ',
             form_message_ph: '現場の状況や安全ニーズについてお聞かせください...',
             form_submit: '送信する',
+            form_submit_demo: 'デモを申し込む',
             form_submitting: '送信中...',
             form_success: 'ありがとうございます。近日中にご連絡いたします。',
             form_error: 'エラーが発生しました。もう一度お試しください。'
@@ -253,8 +259,11 @@
 
         var submitBtn = document.querySelector('#gsContactForm .submit-btn');
         if (submitBtn && !submitBtn.disabled) {
-            submitBtn.setAttribute('data-i18n', 'form_submit');
+            var inquiryType = window.GS_getInquiryType ? window.GS_getInquiryType() : 'contact';
+            submitBtn.setAttribute('data-i18n', inquiryType === 'demo' ? 'form_submit_demo' : 'form_submit');
         }
+
+        if (window.GS_applyInquiryCopy) window.GS_applyInquiryCopy();
 
         var btnEn = document.querySelector('.gs-lang-en');
         var btnJa = document.querySelector('.gs-lang-ja');
