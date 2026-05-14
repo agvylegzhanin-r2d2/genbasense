@@ -144,6 +144,47 @@
             box-shadow: 0 4px 14px rgba(45,90,39,0.25);
         }
         .btn-contact-nav:hover { background: #1e4620; color: #fff !important; text-decoration: none !important; }
+        @media (max-width: 768px) {
+            .info-bar {
+                padding-left: 0;
+                padding-right: 0;
+                overflow: hidden;
+            }
+            .info-bar-inner {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 6px;
+                flex-wrap: nowrap;
+            }
+            .info-bar-brand-row {
+                padding: 0 clamp(14px, 4vw, 20px);
+                flex: 0 0 auto;
+            }
+            .info-bar-nav {
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                gap: 14px;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                overscroll-behavior-x: contain;
+                scroll-snap-type: x proximity;
+                padding: 2px clamp(14px, 4vw, 20px) 8px;
+                scrollbar-width: none;
+                touch-action: pan-x;
+            }
+            .info-bar-nav::-webkit-scrollbar {
+                display: none;
+            }
+            .info-bar-nav a,
+            .info-bar-nav .gs-lang-toggle {
+                flex-shrink: 0;
+                scroll-snap-align: start;
+            }
+        }
         html { scroll-behavior: smooth; }
         /* Hero */
         .hero { padding: 0 0 56px; text-align: center; }
