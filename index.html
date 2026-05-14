@@ -270,7 +270,7 @@
             margin: 0 auto 24px;
         }
         .hero-detail .stats-grid {
-            grid-template-columns: repeat(5, minmax(0, 1fr));
+            grid-template-columns: repeat(6, minmax(0, 1fr));
             gap: 12px;
             margin-top: 0;
         }
@@ -278,7 +278,7 @@
         .hero-detail .stat-value { font-size: clamp(20px, 2.5vw, 32px); }
         .hero-detail .stat-label { font-size: 11px; line-height: 1.35; }
         @media (max-width: 900px) {
-            .hero-detail .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .hero-detail .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
         @media (max-width: 640px) {
             .hero-detail .stats-grid { grid-template-columns: 1fr; }
@@ -613,6 +613,10 @@
                         <div class="stat-card">
                             <div class="stat-value">60</div>
                             <p class="stat-label" data-i18n="stat6_label">Average days of lost work per injury</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">↑</div>
+                            <p class="stat-label" data-i18n="stat4_label">Increased insurance</p>
                         </div>
                     </div>
                 </div>
