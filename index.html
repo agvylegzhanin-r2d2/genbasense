@@ -270,15 +270,17 @@
             margin: 0 auto 24px;
         }
         .hero-detail .stats-grid {
-            grid-template-columns: repeat(7, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 12px;
             margin-top: 0;
         }
+        .hero-detail .stat-card:nth-child(5) { grid-column: 2; }
         .hero-detail .stat-card { padding: 20px 10px; }
         .hero-detail .stat-value { font-size: clamp(20px, 2.5vw, 32px); }
         .hero-detail .stat-label { font-size: 11px; line-height: 1.35; }
         @media (max-width: 900px) {
             .hero-detail .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .hero-detail .stat-card:nth-child(5) { grid-column: auto; }
         }
         @media (max-width: 640px) {
             .hero-detail .stats-grid { grid-template-columns: 1fr; }
