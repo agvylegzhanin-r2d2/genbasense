@@ -26,7 +26,7 @@ const cards = [
   { value: '223', label: 'Fatal cases in 2025', file: 'stat-04-fatal-cases' },
   { value: '60', label: 'Average days of lost work per injury', file: 'stat-05-lost-work-days' },
   { value: '↑', label: 'Increased insurance', file: 'stat-06-increased-insurance' },
-  { value: '100-300K', label: 'Machinery idle', file: 'stat-07-machinery-idle' },
+  { value: '¥100-300K yen', label: 'Machinery idle', file: 'stat-07-machinery-idle' },
 ];
 
 function wrapLines(text, maxChars) {
