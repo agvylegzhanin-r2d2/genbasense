@@ -29,8 +29,7 @@ function doGet(e) {
   } catch (err) {
     Logger.log(err);
   }
-  var pixel = Utilities.base64Decode('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
-  return ContentService.createTextOutput(pixel).setMimeType(ContentService.MimeType.GIF);
+  return ContentService.createTextOutput('ok').setMimeType(ContentService.MimeType.TEXT);
 }
 
 function logVisit_(params) {
