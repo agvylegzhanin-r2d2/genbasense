@@ -30,7 +30,7 @@ function doGet(e) {
     Logger.log(err);
   }
   var pixel = Utilities.base64Decode('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
-  return ContentService.createBlob(pixel, 'image/gif').setName('pixel.gif');
+  return ContentService.createTextOutput(pixel).setMimeType(ContentService.MimeType.GIF);
 }
 
 function logVisit_(params) {
