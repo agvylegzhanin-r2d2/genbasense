@@ -1,6 +1,7 @@
 (function () {
-    window.GS_GOOGLE_SCRIPT_URL =
-        'https://script.google.com/macros/s/AKfycbw9GETXoKpXtsfgCeZ3t1dVdd2oxyDqq8ii_hhhhvmgz47NCGc9FWuvtiuirUeaGTui/exec';
+    if (!window.GS_GOOGLE_SCRIPT_URL) {
+        console.warn('GenbaSense forms: set GS_GOOGLE_SCRIPT_URL in gs-form-config.js');
+    }
 
     window.GS_getInquiryType = function () {
         var type = new URLSearchParams(window.location.search).get('inquiry');
