@@ -573,6 +573,32 @@
             color: #1a1a1a;
             margin: 0;
         }
+        .positioning-block .positioning-cta {
+            margin-top: 32px;
+            text-align: center;
+        }
+        .positioning-block .btn-primary {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #2d5a27;
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            border-radius: 999px;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(45, 90, 39, 0.25);
+        }
+        .positioning-block .btn-primary:hover {
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(45, 90, 39, 0.35);
+        }
+        .positioning-block .section-title {
+            font-size: clamp(26px, 4vw, 38px);
+            line-height: 1.25;
+        }
+        .positioning-block .positioning-lead {
+            margin-top: 0;
+        }
         .cta-section { text-align: center; padding: 56px 0 64px; }
         .cta-section .contact { margin-top: 20px; font-size: 16px; }
         .cta-section a[href^="mailto"] { text-decoration: underline; }
@@ -639,7 +665,6 @@
                 </div>
             </div>
             <div class="container hero-content">
-                <h1 data-i18n="hero_title">Site Safety to Prevent Machinery Collisions</h1>
                 <div class="hero-detail">
                     <div class="section-fig-wrap framed">
                         <img src="imgs/genbasense_images/problem.png" alt="Construction site problem – vehicle and machinery accidents" class="section-fig">
@@ -716,6 +741,33 @@
             </div>
         </section>
 
+        <!-- Real-time positioning & value proposition -->
+        <section class="section-alt positioning-block" id="real-time-positioning">
+            <div class="container">
+                <h2 class="section-title" data-i18n="hero_title">Reduce expenses on compensations and work stoppage by preventing collisions with machinery</h2>
+                <p class="section-lead" data-i18n="hero_tagline">For general contractors, subcontractors, and site managers, GenbaSense uses real-time UWB positioning and instant haptic alerts so workers stay aware of moving equipment—even in noise and low visibility.</p>
+                <h3 class="positioning-subtitle" data-i18n="blog_title">Real-time positioning</h3>
+                <p class="section-lead positioning-lead" data-i18n="blog_lead">UWB anchors and wearables map where people and machines are on site—centimeter-scale accuracy from a few centimeters up to 50 meters, without relying on site Wi‑Fi.</p>
+                <div class="positioning-hero">
+                    <img src="imgs/positioning.png" alt="Real-time positioning map on a construction site">
+                </div>
+                <h3 class="positioning-subtitle" data-i18n="blog_adv_title">Why real-time positioning matters</h3>
+                <ul class="positioning-list">
+                    <li data-i18n="blog_adv1">See blind spots before a collision—workers get haptic alerts when equipment is too close.</li>
+                    <li data-i18n="blog_adv2">Works offline on site; no dependency on cellular or Wi‑Fi coverage.</li>
+                    <li data-i18n="blog_adv3">Measure near-misses and congestion instead of guessing from incident reports alone.</li>
+                    <li data-i18n="blog_adv4">Optimize traffic flow and exclusion zones using actual movement patterns.</li>
+                </ul>
+                <div class="highlight-box">
+                    <h3 data-i18n="case2_title">Data &amp; compliance</h3>
+                    <p data-i18n="case2_text">Data for ISO&nbsp;45001 evidence, proactive risk management, and internal safety meetings.</p>
+                </div>
+                <div class="positioning-cta">
+                    <a href="contact.html?inquiry=demo" class="btn-primary" data-i18n="btn_book_demo">Book a demo</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Use cases (benefit images) -->
         <section class="section-alt" id="use-cases">
             <div class="container">
@@ -734,35 +786,12 @@
                     <div class="card">
                         <h3 data-i18n="case2_title">Data &amp; compliance</h3>
                         <p data-i18n="case2_text">Data for ISO&nbsp;45001 evidence, proactive risk management, and internal safety meetings.</p>
-                        <a href="#real-time-positioning" class="card-read-more" data-i18n="case2_read_more">Real-time positioning →</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Real-time positioning -->
-        <section class="section-alt positioning-block" id="real-time-positioning">
-            <div class="container">
-                <h2 class="section-title" data-i18n="blog_title">Real-time positioning</h2>
-                <p class="section-lead" data-i18n="blog_lead">UWB anchors and wearables map where people and machines are on site—centimeter-scale accuracy from a few centimeters up to 50 meters, without relying on site Wi‑Fi.</p>
-                <div class="positioning-hero">
-                    <img src="imgs/positioning.png" alt="Real-time positioning map on a construction site">
-                </div>
-                <h3 class="positioning-subtitle" data-i18n="blog_adv_title">Why real-time positioning matters</h3>
-                <ul class="positioning-list">
-                    <li data-i18n="blog_adv1">See blind spots before a collision—workers get haptic alerts when equipment is too close.</li>
-                    <li data-i18n="blog_adv2">Works offline on site; no dependency on cellular or Wi‑Fi coverage.</li>
-                    <li data-i18n="blog_adv3">Measure near-misses and congestion instead of guessing from incident reports alone.</li>
-                    <li data-i18n="blog_adv4">Optimize traffic flow and exclusion zones using actual movement patterns.</li>
-                </ul>
-                <div class="highlight-box">
-                    <h3 data-i18n="case2_title">Data &amp; compliance</h3>
-                    <p data-i18n="case2_text">Data for ISO&nbsp;45001 evidence, proactive risk management, and internal safety meetings.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Who we serve -->
+<!-- Who we serve -->
         <section class="section-alt" id="customers">
             <div class="container">
                 <h2 class="section-title" data-i18n="serve_title">Who We Serve</h2>
