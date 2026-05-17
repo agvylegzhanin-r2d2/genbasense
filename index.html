@@ -258,6 +258,25 @@
         }
         .hero-logo { display: block; margin: 0 auto 20px; height: 80px; width: auto; max-width: 200px; object-fit: contain; }
         .hero-content { padding: 48px 0 56px; }
+        .hero-intro {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: clamp(32px, 5vw, 48px) 24px 0;
+            text-align: center;
+        }
+        .hero-intro h2 {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 700;
+            line-height: 1.25;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+        .hero-intro p {
+            font-size: clamp(16px, 2.2vw, 19px);
+            line-height: 1.55;
+            color: #444;
+            margin: 0;
+        }
         .hero-detail {
             margin-top: 28px;
             max-width: 1100px;
@@ -664,6 +683,10 @@
                     <a href="contact.html?inquiry=demo" class="btn-book-demo" data-i18n="btn_book_demo">Book a demo</a>
                 </div>
             </div>
+            <div class="container hero-intro">
+                <h2 data-i18n="hero_title">Reduce expenses on compensations and work stoppage by preventing collisions with machinery</h2>
+                <p data-i18n="hero_tagline">For general contractors, subcontractors, and site managers, GenbaSense uses real-time UWB positioning and instant haptic alerts so workers stay aware of moving equipment—even in noise and low visibility.</p>
+            </div>
             <div class="container hero-content">
                 <div class="hero-detail">
                     <div class="section-fig-wrap framed">
@@ -744,9 +767,7 @@
         <!-- Real-time positioning & value proposition -->
         <section class="section-alt positioning-block" id="real-time-positioning">
             <div class="container">
-                <h2 class="section-title" data-i18n="hero_title">Reduce expenses on compensations and work stoppage by preventing collisions with machinery</h2>
-                <p class="section-lead" data-i18n="hero_tagline">For general contractors, subcontractors, and site managers, GenbaSense uses real-time UWB positioning and instant haptic alerts so workers stay aware of moving equipment—even in noise and low visibility.</p>
-                <h3 class="positioning-subtitle" data-i18n="blog_title">Real-time positioning</h3>
+                <h2 class="section-title" data-i18n="blog_title">Real-time positioning</h2>
                 <p class="section-lead positioning-lead" data-i18n="blog_lead">UWB anchors and wearables map where people and machines are on site—centimeter-scale accuracy from a few centimeters up to 50 meters, without relying on site Wi‑Fi.</p>
                 <div class="positioning-hero">
                     <img src="imgs/positioning.png" alt="Real-time positioning map on a construction site">
