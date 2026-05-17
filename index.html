@@ -532,6 +532,47 @@
             gap: 20px; margin-top: 28px;
         }
         .benefit-images img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+        .positioning-block .positioning-hero {
+            margin: 28px 0 32px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .positioning-block .positioning-hero img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .positioning-block .positioning-list {
+            margin: 0 0 28px 1.2em;
+            font-size: 16px;
+            color: #444;
+        }
+        .positioning-block .positioning-list li { margin-bottom: 10px; }
+        .positioning-block .positioning-subtitle {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #1a1a1a;
+        }
+        .positioning-block .highlight-box {
+            background: #f0f4f0;
+            border: 1px solid #d4e4d4;
+            border-radius: 14px;
+            padding: 24px 28px;
+        }
+        .positioning-block .highlight-box h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        .positioning-block .highlight-box p {
+            font-size: 16px;
+            color: #1a1a1a;
+            margin: 0;
+        }
         .cta-section { text-align: center; padding: 56px 0 64px; }
         .cta-section .contact { margin-top: 20px; font-size: 16px; }
         .cta-section a[href^="mailto"] { text-decoration: underline; }
@@ -684,7 +725,6 @@
                     <img src="imgs/genbasense_images/forklift case.png" alt="Forklift case – GenbaSense safety">
                     <img src="imgs/genbasense_images/crane case.png" alt="Crane case – GenbaSense safety">
                     <img src="imgs/genbasense_images/buldozer case.png" alt="Bulldozer case – GenbaSense safety">
-                    <img src="imgs/positioning.png" alt="Real-time positioning on site">
                 </div>
                 <div class="card-grid">
                     <div class="card">
@@ -694,8 +734,30 @@
                     <div class="card">
                         <h3 data-i18n="case2_title">Data &amp; compliance</h3>
                         <p data-i18n="case2_text">Data for ISO&nbsp;45001 evidence, proactive risk management, and internal safety meetings.</p>
-                        <a href="blog-real-time-positioning.html" class="card-read-more" data-i18n="case2_read_more">Real-time positioning →</a>
+                        <a href="#real-time-positioning" class="card-read-more" data-i18n="case2_read_more">Real-time positioning →</a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real-time positioning -->
+        <section class="section-alt positioning-block" id="real-time-positioning">
+            <div class="container">
+                <h2 class="section-title" data-i18n="blog_title">Real-time positioning</h2>
+                <p class="section-lead" data-i18n="blog_lead">UWB anchors and wearables map where people and machines are on site—centimeter-scale accuracy from a few centimeters up to 50 meters, without relying on site Wi‑Fi.</p>
+                <div class="positioning-hero">
+                    <img src="imgs/positioning.png" alt="Real-time positioning map on a construction site">
+                </div>
+                <h3 class="positioning-subtitle" data-i18n="blog_adv_title">Why real-time positioning matters</h3>
+                <ul class="positioning-list">
+                    <li data-i18n="blog_adv1">See blind spots before a collision—workers get haptic alerts when equipment is too close.</li>
+                    <li data-i18n="blog_adv2">Works offline on site; no dependency on cellular or Wi‑Fi coverage.</li>
+                    <li data-i18n="blog_adv3">Measure near-misses and congestion instead of guessing from incident reports alone.</li>
+                    <li data-i18n="blog_adv4">Optimize traffic flow and exclusion zones using actual movement patterns.</li>
+                </ul>
+                <div class="highlight-box">
+                    <h3 data-i18n="case2_title">Data &amp; compliance</h3>
+                    <p data-i18n="case2_text">Data for ISO&nbsp;45001 evidence, proactive risk management, and internal safety meetings.</p>
                 </div>
             </div>
         </section>
