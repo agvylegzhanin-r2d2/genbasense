@@ -289,20 +289,36 @@
             margin: 0 auto 24px;
         }
         .hero-detail .stats-grid {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 12px;
             margin-top: 0;
         }
-        .hero-detail .stat-card:nth-child(5) { grid-column: 2; }
-        .hero-detail .stat-card { padding: 20px 10px; }
+        .hero-detail .stat-card {
+            flex: 0 1 calc((100% - 36px) / 4);
+            max-width: calc((100% - 36px) / 4);
+            min-width: min(100%, 180px);
+            padding: 20px 12px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
         .hero-detail .stat-value { font-size: clamp(20px, 2.5vw, 32px); }
-        .hero-detail .stat-label { font-size: 11px; line-height: 1.35; }
+        .hero-detail .stat-label { font-size: 11px; line-height: 1.35; flex: 1; }
         @media (max-width: 900px) {
-            .hero-detail .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-            .hero-detail .stat-card:nth-child(5) { grid-column: auto; }
+            .hero-detail .stat-card {
+                flex: 0 1 calc((100% - 24px) / 3);
+                max-width: calc((100% - 24px) / 3);
+            }
         }
         @media (max-width: 640px) {
-            .hero-detail .stats-grid { grid-template-columns: 1fr; }
+            .hero-detail .stat-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+                min-width: 0;
+            }
         }
         .hero h1 { font-size: clamp(34px, 6vw, 52px); font-weight: 700; margin-bottom: 16px; letter-spacing: -0.02em; line-height: 1.15; color: #1a1a1a; }
         .hero .tagline { font-size: clamp(17px, 2.5vw, 21px); color: #444; max-width: 620px; margin: 0 auto 28px; }
