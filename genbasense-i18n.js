@@ -78,7 +78,18 @@
             case1_title: 'Cost reduction',
             case1_text: 'Save on insurance and compensation through fewer accidents. Prevent delays and work stoppages on site.',
             case2_title: 'Data & compliance',
-            case2_text: 'Hot-zone data for ISO\u00a045001 evidence, proactive risk management, and internal safety meetings.',
+            case2_text: 'Data for ISO\u00a045001 evidence, proactive risk management, and internal safety meetings.',
+            case2_read_more: 'Real-time positioning \u2192',
+            blog_page_title: 'Real-time positioning \u2013 GenbaSense',
+            blog_eyebrow: 'Insights',
+            blog_title: 'Real-time positioning',
+            blog_lead: 'UWB anchors and wearables map where people and machines are on site\u2014centimeter-scale accuracy from a few centimeters up to 50 meters, without relying on site Wi\u2011Fi.',
+            blog_back: '\u2190 Back to use cases',
+            blog_adv_title: 'Why real-time positioning matters',
+            blog_adv1: 'See blind spots before a collision\u2014workers get haptic alerts when equipment is too close.',
+            blog_adv2: 'Works offline on site; no dependency on cellular or Wi\u2011Fi coverage.',
+            blog_adv3: 'Measure near-misses and congestion instead of guessing from incident reports alone.',
+            blog_adv4: 'Optimize traffic flow and exclusion zones using actual movement patterns.',
             product_title: 'Hardware and Software',
             hw1: '• Precise positioning',
             hw2: '• Identifiable haptic stimuli and multiple haptic patterns',
@@ -194,7 +205,18 @@
             case1_title: 'コスト削減',
             case1_text: '事故削減による保険・賠償の節約。現場の遅延と作業停止を防止。',
             case2_title: 'データとコンプライアンス',
-            case2_text: 'ISO 45001証拠、能動的リスク管理、社内安全会議向けのホットゾーンデータ。',
+            case2_text: 'ISO 45001の証拠、能動的リスク管理、社内安全会議のためのデータ。',
+            case2_read_more: 'リアルタイム測位 →',
+            blog_page_title: 'リアルタイム測位 – GenbaSense',
+            blog_eyebrow: 'インサイト',
+            blog_title: 'リアルタイム測位',
+            blog_lead: 'UWBアンカーとウェアラブルで、現場の人と機械の位置をマップ。数cmから50mまでの精度で、現場Wi‑Fiに依存しません。',
+            blog_back: '← ユースケースに戻る',
+            blog_adv_title: 'リアルタイム測位のメリット',
+            blog_adv1: '衝突前に死角を把握—接近時にハプティックで作業員へ警告。',
+            blog_adv2: '現場でオフライン動作。携帯やWi‑Fi不要。',
+            blog_adv3: '事故報告だけでなく、ニアミスや混雑を測定。',
+            blog_adv4: '実際の動線データで通行と立入禁止ゾーンを最適化。',
             product_title: 'ハードウェアとソフトウェア',
             hw1: '• 高精度測位',
             hw2: '• 識別可能なハプティック刺激と複数パターン',
@@ -244,7 +266,8 @@
         currentLang = lang;
         localStorage.setItem(STORAGE_KEY, lang);
         document.documentElement.lang = lang === 'ja' ? 'ja' : 'en';
-        document.title = t[lang].page_title;
+        var titleKey = document.body.dataset.i18nTitle;
+        document.title = (titleKey && t[lang][titleKey]) ? t[lang][titleKey] : t[lang].page_title;
 
         document.querySelectorAll('[data-i18n]').forEach(function (el) {
             var key = el.getAttribute('data-i18n');

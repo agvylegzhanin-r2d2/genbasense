@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <title>Real-time positioning – GenbaSense</title>
+    <link rel="icon" type="image/png" href="imgs/genbasense_images/logo_genbasense_2.0.png?v=2">
+    <link rel="apple-touch-icon" href="imgs/genbasense_images/logo_genbasense_2.0.png?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fff;
+            color: #1a1a1a;
+            line-height: 1.65;
+            min-height: 100vh;
+        }
+        a { color: #2d5a27; }
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 14px clamp(20px, 4vw, 40px);
+            border-bottom: 1px solid #e8e8e8;
+            flex-wrap: wrap;
+        }
+        .page-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: inherit;
+        }
+        .page-brand img { height: 48px; width: auto; }
+        .page-brand span { font-weight: 600; font-size: 18px; }
+        .header-actions { display: flex; align-items: center; gap: 12px; }
+        .back-link { font-size: 14px; color: #555; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; color: #1a1a1a; }
+        .gs-lang-toggle {
+            padding: 6px 12px; border: 1px solid #ddd; border-radius: 999px;
+            background: #fff; font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit;
+        }
+        .blog-main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 72px;
+        }
+        .blog-eyebrow {
+            font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+            text-transform: uppercase; color: #666; margin-bottom: 10px;
+        }
+        .blog-title {
+            font-size: clamp(30px, 5vw, 40px);
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+        .blog-lead {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 32px;
+        }
+        .blog-hero {
+            margin-bottom: 36px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .blog-hero img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .blog-section { margin-bottom: 32px; }
+        .blog-section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        .blog-section p {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 12px;
+        }
+        .blog-section ul {
+            margin: 0 0 12px 1.2em;
+            font-size: 16px;
+            color: #444;
+        }
+        .blog-section li { margin-bottom: 8px; }
+        .highlight-box {
+            background: #f0f4f0;
+            border: 1px solid #d4e4d4;
+            border-radius: 14px;
+            padding: 24px 28px;
+            margin-top: 8px;
+        }
+        .highlight-box h2 { font-size: 20px; margin-bottom: 10px; }
+        .highlight-box p { margin-bottom: 0; font-size: 17px; color: #1a1a1a; }
+        .blog-cta {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .btn-primary {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #2d5a27;
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            border-radius: 999px;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(45, 90, 39, 0.25);
+        }
+        .btn-primary:hover { color: #fff; box-shadow: 0 8px 24px rgba(45, 90, 39, 0.35); }
+    </style>
+</head>
+<body data-i18n-title="blog_page_title">
+    <header class="page-header">
+        <a href="index.html" class="page-brand">
+            <img src="imgs/genbasense_images/logo_genbasense_2.0.png" alt="GenbaSense">
+            <span>GenbaSense</span>
+        </a>
+        <div class="header-actions">
+            <a href="index.html#use-cases" class="back-link" data-i18n="blog_back">← Back to use cases</a>
+            <button type="button" id="gs-lang-toggle" class="gs-lang-toggle" aria-label="Switch language">
+                <span class="gs-lang-en">🇯🇵 日本語</span>
+                <span class="gs-lang-ja" style="display:none;">🇺🇸 English</span>
+            </button>
+        </div>
+    </header>
+
+    <article class="blog-main">
+        <p class="blog-eyebrow" data-i18n="blog_eyebrow">Insights</p>
+        <h1 class="blog-title" data-i18n="blog_title">Real-time positioning</h1>
+        <p class="blog-lead" data-i18n="blog_lead">UWB anchors and wearables map where people and machines are on site—centimeter-scale accuracy from a few centimeters up to 50 meters, without relying on site Wi‑Fi.</p>
+
+        <div class="blog-hero">
+            <img src="imgs/positioning.png" alt="Real-time positioning map on a construction site">
+        </div>
+
+        <section class="blog-section">
+            <h2 data-i18n="blog_adv_title">Why real-time positioning matters</h2>
+            <ul>
+                <li data-i18n="blog_adv1">See blind spots before a collision—workers get haptic alerts when equipment is too close.</li>
+                <li data-i18n="blog_adv2">Works offline on site; no dependency on cellular or Wi‑Fi coverage.</li>
+                <li data-i18n="blog_adv3">Measure near-misses and congestion instead of guessing from incident reports alone.</li>
+                <li data-i18n="blog_adv4">Optimize traffic flow and exclusion zones using actual movement patterns.</li>
+            </ul>
+        </section>
+
+        <section class="blog-section highlight-box">
+            <h2 data-i18n="case2_title">Data &amp; compliance</h2>
+            <p data-i18n="case2_text">Data for ISO&nbsp;45001 evidence, proactive risk management, and internal safety meetings.</p>
+        </section>
+
+        <div class="blog-cta">
+            <a href="contact.html?inquiry=demo" class="btn-primary" data-i18n="btn_book_demo">Book a demo</a>
+        </div>
+    </article>
+
+    <script src="gs-analytics-config.js"></script>
+    <script src="gs-analytics.js"></script>
+    <script src="genbasense-i18n.js"></script>
+</body>
+</html>

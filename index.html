@@ -313,6 +313,15 @@
             border: 1px solid #e8e8e8;
         }
         .card h3 { font-size: 17px; margin-bottom: 8px; font-weight: 700; color: #1a1a1a; }
+        .card-read-more {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d5a27;
+            text-decoration: none;
+        }
+        .card-read-more:hover { text-decoration: underline; }
         .customer-card-grid {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -675,7 +684,6 @@
                     <img src="imgs/genbasense_images/forklift case.png" alt="Forklift case – GenbaSense safety">
                     <img src="imgs/genbasense_images/crane case.png" alt="Crane case – GenbaSense safety">
                     <img src="imgs/genbasense_images/buldozer case.png" alt="Bulldozer case – GenbaSense safety">
-                    <img src="imgs/genbasense_images/hot zones map.png" alt="Hot zones map – worker analytics">
                 </div>
                 <div class="card-grid">
                     <div class="card">
@@ -684,7 +692,8 @@
                     </div>
                     <div class="card">
                         <h3 data-i18n="case2_title">Data &amp; compliance</h3>
-                        <p data-i18n="case2_text">Hot-zone data for ISO&nbsp;45001 evidence, proactive risk management, and internal safety meetings.</p>
+                        <p data-i18n="case2_text">Data for ISO&nbsp;45001 evidence, proactive risk management, and internal safety meetings.</p>
+                        <a href="blog-real-time-positioning.html" class="card-read-more" data-i18n="case2_read_more">Real-time positioning →</a>
                     </div>
                 </div>
             </div>
