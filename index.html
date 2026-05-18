@@ -576,25 +576,24 @@
             gap: 14px;
             max-width: 920px;
             margin: 20px auto;
-            align-items: stretch;
+            align-items: start;
         }
         .solution-figs .section-fig-wrap.framed {
             max-width: 100%;
             margin: 0;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: clamp(180px, 22vw, 240px);
-            min-height: 0;
+            padding: 0;
+            display: block;
+            height: auto;
+            overflow: hidden;
         }
-        .solution-figs .section-fig {
+        .solution-figs .section-fig-wrap.framed .section-fig {
             width: 100%;
-            height: 100%;
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            height: auto;
+            display: block;
+            margin: 0;
+            border-radius: 0;
             box-shadow: none;
+            vertical-align: top;
         }
         @media (max-width: 640px) {
             .solution-figs { grid-template-columns: 1fr; }
@@ -762,13 +761,13 @@
                 <p class="section-lead" data-i18n="sol_lead">GenbaSense turns site movement into real-time safety—by detecting proximity, alerting with haptics, and analyzing patterns for continuous improvement.</p>
                 <div class="solution-figs">
                     <div class="section-fig-wrap framed">
-                        <img src="imgs/crane_UWB_expl.png" alt="Crane UWB explanation – GenbaSense safety" class="section-fig">
+                        <img src="imgs/crane_UWB_expl.png?v=3" alt="Crane UWB explanation – GenbaSense safety" class="section-fig">
                     </div>
                     <div class="section-fig-wrap framed">
-                        <img src="imgs/crane_cabin_view.png" alt="Crane cabin view" class="section-fig">
+                        <img src="imgs/crane_cabin_view.png?v=3" alt="Crane cabin view" class="section-fig">
                     </div>
                     <div class="section-fig-wrap framed">
-                        <img src="imgs/mvp_1.jpg" alt="GenbaSense wearable MVP – UWB proximity device" class="section-fig">
+                        <img src="imgs/mvp_1.jpg?v=3" alt="GenbaSense wearable MVP – UWB proximity device" class="section-fig">
                     </div>
                 </div>
                 <div class="steps">
