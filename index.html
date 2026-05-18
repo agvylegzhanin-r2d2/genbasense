@@ -395,7 +395,9 @@
             border-radius: 0;
         }
         .customer-card-icon {
-            width: min(180px, 100%);
+            width: 160px;
+            height: 160px;
+            max-width: 100%;
             margin: 0 auto 12px;
             flex-shrink: 0;
             background: transparent;
@@ -404,7 +406,8 @@
         .customer-card-img {
             display: block;
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: contain;
             background: transparent;
         }
         .customer-card h3 {
@@ -572,27 +575,23 @@
             gap: 14px;
             max-width: 920px;
             margin: 20px auto;
-            align-items: stretch;
+            align-items: start;
         }
         .solution-figs .section-fig-wrap.framed {
             max-width: 100%;
             margin: 0;
             padding: 0;
-            display: flex;
-            align-items: stretch;
-            height: clamp(200px, 22vw, 240px);
-            min-height: 200px;
+            display: block;
+            height: auto;
             overflow: hidden;
         }
         .solution-figs .section-fig-wrap.framed .section-fig {
             width: 100%;
-            height: 100%;
+            height: auto;
             display: block;
             margin: 0;
             border-radius: 0;
             box-shadow: none;
-            object-fit: cover;
-            object-position: center;
         }
         @media (max-width: 640px) {
             .solution-figs { grid-template-columns: 1fr; }
@@ -839,25 +838,25 @@
                 <div class="customer-card-grid">
                     <div class="customer-card">
                         <div class="customer-card-icon">
-                            <img src="imgs/constr sites.png?v=4" alt="Construction sites" class="customer-card-img">
+                            <img src="imgs/constr sites.png?v=5" alt="Construction sites" class="customer-card-img">
                         </div>
                         <h3 data-i18n="serve1_title">Construction sites</h3>
                     </div>
                     <div class="customer-card">
                         <div class="customer-card-icon">
-                            <img src="imgs/warehouses.png?v=4" alt="Warehouse operators" class="customer-card-img">
+                            <img src="imgs/warehouses.png?v=5" alt="Warehouse operators" class="customer-card-img">
                         </div>
                         <h3 data-i18n="serve2_title">Warehouse operators</h3>
                     </div>
                     <div class="customer-card">
                         <div class="customer-card-icon">
-                            <img src="imgs/logistics centers.png?v=4" alt="Logistics centers" class="customer-card-img">
+                            <img src="imgs/logistics centers.png?v=5" alt="Logistics centers" class="customer-card-img">
                         </div>
                         <h3 data-i18n="serve3_title">Logistics centers</h3>
                     </div>
                     <div class="customer-card">
                         <div class="customer-card-icon">
-                            <img src="imgs/heavy indusrt.png?v=4" alt="Heavy machinery production" class="customer-card-img">
+                            <img src="imgs/heavy indusrt.png?v=5" alt="Heavy machinery production" class="customer-card-img">
                         </div>
                         <h3 data-i18n="serve4_title">Heavy machinery production</h3>
                     </div>
