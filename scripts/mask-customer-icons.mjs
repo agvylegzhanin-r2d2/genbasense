@@ -18,7 +18,8 @@ async function maskToCircle(file) {
   const meta = await sharp(input).metadata();
   const w = meta.width;
   const h = meta.height;
-  const r = Math.round(Math.min(w, h) * 0.485);
+  // Slightly inset from square edge so the full black ring + badge stay inside the mask.
+  const r = Math.round(Math.min(w, h) / 2 - 2);
   const cx = Math.round(w / 2);
   const cy = Math.round(h / 2);
 
