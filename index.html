@@ -572,24 +572,27 @@
             gap: 14px;
             max-width: 920px;
             margin: 20px auto;
-            align-items: start;
+            align-items: stretch;
         }
         .solution-figs .section-fig-wrap.framed {
             max-width: 100%;
             margin: 0;
             padding: 0;
-            display: block;
-            height: auto;
+            display: flex;
+            align-items: stretch;
+            height: clamp(200px, 22vw, 240px);
+            min-height: 200px;
             overflow: hidden;
         }
         .solution-figs .section-fig-wrap.framed .section-fig {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
             margin: 0;
             border-radius: 0;
             box-shadow: none;
-            vertical-align: top;
+            object-fit: cover;
+            object-position: center;
         }
         @media (max-width: 640px) {
             .solution-figs { grid-template-columns: 1fr; }
