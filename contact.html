@@ -12,13 +12,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --site-surface: rgba(255, 255, 255, 0.82);
+            --site-surface-border: rgba(0, 0, 0, 0.08);
+        }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #fff;
+            background: #f2f2f2;
             color: #1a1a1a;
             line-height: 1.6;
             min-height: 100vh;
+            position: relative;
         }
+        .parallax-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background: #f2f2f2 url('imgs/web_bckgr.png') center top / cover no-repeat;
+        }
+        @media (min-width: 769px) {
+            .parallax-bg { background-attachment: fixed; }
+        }
+        .contact-page-shell { position: relative; z-index: 1; min-height: 100vh; }
         a { color: #2d5a27; }
         .contact-page-header {
             display: flex;
@@ -28,6 +44,9 @@
             padding: 14px clamp(20px, 4vw, 40px);
             border-bottom: 1px solid #e8e8e8;
             flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         .contact-page-brand {
             display: flex;
@@ -47,9 +66,12 @@
         }
         .contact-main {
             max-width: 560px;
-            margin: 0 auto;
+            margin: 32px auto 48px;
             padding: 48px 24px 64px;
             text-align: center;
+            background: var(--site-surface);
+            border: 1px solid var(--site-surface-border);
+            border-radius: 16px;
         }
         .section-eyebrow {
             font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
@@ -98,6 +120,8 @@
     </style>
 </head>
 <body>
+    <div class="parallax-bg" aria-hidden="true"></div>
+    <div class="contact-page-shell">
     <header class="contact-page-header">
         <a href="index.html" class="contact-page-brand">
             <img src="imgs/genbasense_images/logo_genbasense_2.0.png" alt="GenbaSense">
@@ -165,6 +189,7 @@
             <p><a href="mailto:tds@oist.jp">tds@oist.jp</a></p>
         </div>
     </main>
+    </div>
 
     <script src="gs-analytics-config.js"></script>
     <script src="gs-analytics.js"></script>
