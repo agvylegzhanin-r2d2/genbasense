@@ -13,26 +13,24 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --site-surface: rgba(255, 255, 255, 0.82);
-            --site-surface-border: rgba(0, 0, 0, 0.08);
+            --site-surface: rgba(255, 255, 255, 0.72);
+            --site-surface-border: rgba(0, 0, 0, 0.1);
         }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #f2f2f2;
+            background-color: #f2f2f2;
+            background-image: url('imgs/web_bckgr.png');
+            background-position: center top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: #1a1a1a;
             line-height: 1.6;
             min-height: 100vh;
             position: relative;
         }
         .parallax-bg {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            background: #f2f2f2 url('imgs/web_bckgr.png') center top / cover no-repeat;
-        }
-        @media (min-width: 769px) {
-            .parallax-bg { background-attachment: fixed; }
+            display: none;
         }
         .contact-page-shell { position: relative; z-index: 1; min-height: 100vh; }
         a { color: #2d5a27; }
@@ -72,6 +70,8 @@
             background: var(--site-surface);
             border: 1px solid var(--site-surface-border);
             border-radius: 16px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
         .section-eyebrow {
             font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
@@ -120,7 +120,6 @@
     </style>
 </head>
 <body>
-    <div class="parallax-bg" aria-hidden="true"></div>
     <div class="contact-page-shell">
     <header class="contact-page-header">
         <a href="index.html" class="contact-page-brand">
