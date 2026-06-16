@@ -588,28 +588,34 @@
         @media (max-width: 640px) {
             .solution-figs { grid-template-columns: 1fr; }
         }
-        .tech-demo {
-            max-width: 760px;
-            margin: 8px auto 28px;
-            text-align: center;
+        .tech-demo-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            max-width: 520px;
+            margin: 24px auto 0;
         }
+        .tech-demo-item { text-align: center; }
         .tech-demo-caption {
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 600;
             color: #444;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
         .tech-demo-fig {
-            border-radius: 14px;
+            border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--site-surface-border);
             background: var(--site-surface);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
         }
         .tech-demo-fig img {
             display: block;
             width: 100%;
             height: auto;
+        }
+        @media (max-width: 520px) {
+            .tech-demo-row { grid-template-columns: 1fr; max-width: 280px; }
         }
         .benefit-images {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -772,12 +778,6 @@
             <div class="container">
                 <h2 class="section-title" data-i18n="sol_title">How Our Technology Works</h2>
                 <p class="section-lead" data-i18n="sol_lead">GenbaSense turns site movement into real-time safety—by detecting proximity, alerting with haptics, and analyzing patterns for continuous improvement.</p>
-                <div class="tech-demo">
-                    <p class="tech-demo-caption" data-i18n="sol_demo_caption">Demo: forklift case and operator wearable</p>
-                    <div class="tech-demo-fig">
-                        <img src="imgs/forklift_wearable_demo.gif?v=1" alt="Forklift proximity demo and operator wearable with haptic alerts" width="720" height="520" loading="lazy">
-                    </div>
-                </div>
                 <div class="solution-figs">
                     <div class="section-fig-wrap framed">
                         <img src="imgs/crane_UWB_expl.png?v=3" alt="Crane UWB explanation – GenbaSense safety" class="section-fig">
@@ -787,6 +787,20 @@
                     </div>
                     <div class="section-fig-wrap framed">
                         <img src="imgs/mvp_1.jpg?v=3" alt="GenbaSense wearable MVP – UWB proximity device" class="section-fig">
+                    </div>
+                </div>
+                <div class="tech-demo-row">
+                    <div class="tech-demo-item">
+                        <p class="tech-demo-caption" data-i18n="sol_demo_forklift">Forklift case</p>
+                        <div class="tech-demo-fig">
+                            <img src="imgs/forklift_case_demo.gif?v=2" alt="Forklift proximity tracking demo" width="360" height="260" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="tech-demo-item">
+                        <p class="tech-demo-caption" data-i18n="sol_demo_wearable">Operator wearable</p>
+                        <div class="tech-demo-fig">
+                            <img src="imgs/operator_wearable_demo.gif?v=2" alt="Operator wearable with haptic alerts" width="360" height="260" loading="lazy">
+                        </div>
                     </div>
                 </div>
                 <div class="steps">
